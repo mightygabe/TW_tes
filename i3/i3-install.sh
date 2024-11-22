@@ -35,10 +35,6 @@ for package in "${packages[@]}"; do
     fi
 done
 
-# Create folders in user directory(Downloads,Documents,etc)
-xdg-user-dirs-update
-mkdir ~/Screenshots
-
 sudo bash ~/pulse_scripts/i3/packages.sh
 clear
 
@@ -48,7 +44,7 @@ clear
 sudo bash ~/pulse_scripts/display-manager.sh
 clear
 
-
 sudo apt autoremove
+clear
 
 printf "\e[1;34mInstallation finished! Happy Linux\e[0m\n"

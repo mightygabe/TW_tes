@@ -93,13 +93,14 @@ install_slim() {
 install_greetd() {
     echo "Installing greetd..."
     sudo apt update
-    sudo apt install -y greetd tuigreet
+    sudo apt install -y greetd tuigreet xinit
     sudo systemctl enable greetd
     echo -e "${green}greetd has been installed and enabled.${reset}\n"
 }
 
 prompt_user() {
     while true; do
+        echo ''
         echo "1) Install GDM3"
         echo "2) Install SDDM"
         echo "3) Install LightDM"

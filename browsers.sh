@@ -87,12 +87,14 @@ install_librewolf() {
 install_google_chrome() {
     clear
     echo -e "${red}Installing Google Chrome...${reset}\n"
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb /tmp
+    cd /tmp
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo apt install /tmp/google-chrome-stable_current_amd64.deb
 }
 
 prompt_user() {
     while true; do
+        echo ''
         echo "1) Install Firefox [only on debian sid]"
         echo "2) Install Firefox(esr)"
         echo "3) Install Brave"
