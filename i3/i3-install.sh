@@ -62,3 +62,4 @@ sudo apt autoremove
 clear
 
 printf "\e[1;34mInstallation finished! Happy Linux\e[0m\n"
+printf "${green}A system reboot is recommended.${reset}"
