@@ -35,6 +35,20 @@ for package in "${packages[@]}"; do
     fi
 done
 
+# Check if the common_packages file exists
+if [ ! -f "$HOME/pulse_scripts/common_packages.txt" ]; then
+    echo -e "${red}Error: common_packages.txt file not found!${reset}"
+    exit 1
+fi
+
+# Read the package list and install each package
+while IFS= read -r package || [ -n "$package" ]; do
+    if [[ ! -z "$package" ]]; then
+        echo -e "${green}Installing ${yellow}$package...${reset}"
+        sudo apt-get install -y "$package"
+    fi
+done < "$HOME/pulse_scripts/common_packages.txt"
+
 sudo bash ~/pulse_scripts/Sway/packages.sh
 clear
 

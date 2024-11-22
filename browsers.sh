@@ -23,8 +23,9 @@ set_colors() {
 # Initialize color codes
 set_colors
 
+clear
+
 install_firefox() {
-    clear
     echo -e "${red}Installing Firefox...${reset}\n"
     sudo apt-get install -y firefox
 
@@ -37,7 +38,6 @@ install_firefox() {
 }
 
 install_firefox_esr() {
-    clear
     echo -e "${red}Installing Firefox(esr)...${reset}\n"
     sudo apt-get install -y firefox-esr
 
@@ -50,7 +50,6 @@ install_firefox_esr() {
 }
 
 install_brave() {
-    clear
     echo -e "${red}Installing Brave...${reset}\n"
     sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
     echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -67,7 +66,6 @@ install_brave() {
 }
 
 install_librewolf() {
-    clear
     echo -e "${red}Installing LibreWolf...${reset}\n"
     sudo apt update
     sudo apt-get install -y extrepo
@@ -85,7 +83,6 @@ install_librewolf() {
 }
 
 install_google_chrome() {
-    clear
     echo -e "${red}Installing Google Chrome...${reset}\n"
     cd /tmp
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

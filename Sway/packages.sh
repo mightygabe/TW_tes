@@ -23,23 +23,6 @@ set_colors() {
 # Initialize color codes
 set_colors
 
-local user_home
-user_home=$(getent passwd "$SUDO_USER" | cut -d: -f6)
-
-# Check if the common_packages file exists
-if [ ! -f "$user_home/pulse_scripts/common_packages.txt" ]; then
-    echo -e "${red}Error: common_packages.txt file not found!${reset}"
-    exit 1
-fi
-
-# Read the package list and install each package
-while IFS= read -r package || [ -n "$package" ]; do
-    if [[ ! -z "$package" ]]; then
-        echo -e "${green}Installing ${yellow}$package...${reset}"
-        sudo apt-get install -y "$package"
-    fi
-done < "$user_home/pulse_scripts/common_packages.txt"
-
 # Define package categories and packages as separate arrays
 terminal_emulators=("alacritty" "kitty" "foot" "konsole" "terminator" "gnome-terminal" "xfce4-terminal")
 file_managers=("thunar" "pcmanfm" "nautilus" "dolphin" "ranger" "lf")
