@@ -34,7 +34,7 @@ else
     echo -e "${yellow}git is already installed.${reser}\n"
 fi
 
-git clone https://github.com/pegasus-pulse/TWM_Scripts.git ~/pulse_scripts
+git clone https://github.com/mightygabe/TW_tes.git ~/pulse_scripts
 clear
 
 install_i3() {
